@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting Component</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+      // Step 3: Creating the Greeting component
+      const Greeting = (props) => {
+        return (
+          <p>
+            {props.message}, {props.name}!
+          </p>
+        );
+      };
+
+      // Rendering the Greeting component
+      const App = () => {
+        return (
+          <div>
+            <Greeting message="Hello" name="Alice" />
+            <Greeting message="Hi" name="Bob" />
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
